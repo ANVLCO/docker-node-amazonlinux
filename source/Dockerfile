@@ -7,6 +7,7 @@ LABEL org.label-schema.vcs-url="https://github.com/brandonpapworth/docker-node-a
 # Ensure build tools are present for native module compilation
 RUN yum -y update \
  && yum -y groupinstall "Development Tools" \
+ && yum -y install python27-devel \
  && curl -sL https://bootstrap.pypa.io/get-pip.py | python \
  && pip install awscli \
  && yum clean all
